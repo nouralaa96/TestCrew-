@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.2.1","implementation":{"name":"cucumber-jvm","version":"6.9.1"},"runtime":{"name":"OpenJDK 64-Bit Server VM","version":"11+28"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1697320446","nanos":251481900}}},{"source":{"uri":"file:///D:/AutomationFrameworks/Testcrew%20task/src/test/java/tests/StcSubscriptionPackages.feature","data":"Feature: Plan Price Feature\r\n  In order to subscribe to STC TV\r\n  As a valid customer from KSA KW or BH\r\n  I want to check the plans currency in my country currency and preferred language\r\n\r\n\r\n  Scenario Outline: check lite price and currency in  english\r\n\r\n    Given user Navigate to STC Tv Website\r\n    When  user select \"\u003ccountry\u003e\"\r\n    Then   user Should see lite plan price in \"\u003ccountry\u003e\" currency and selected language\r\n\r\n    Examples:\r\n      | country |\r\n      | KSA     |\r\n      | BH      |\r\n      | KW      |\r\n\r\n  Scenario Outline: check classic price and currency in  english\r\n\r\n    Given user Navigate to STC Tv Website\r\n    When  user select \"\u003ccountry\u003e\"\r\n    Then  user Should see classic plan price in \"\u003ccountry\u003e\" currency and selected language\r\n\r\n\r\n    Examples:\r\n      | country |\r\n      | KSA     |\r\n      | BH      |\r\n      | KW      |\r\n\r\n  Scenario Outline: check permium price and currency in  english\r\n\r\n    Given user Navigate to STC Tv Website\r\n    When  user select \"\u003ccountry\u003e\"\r\n    Then  user Should see permium plan price in \"\u003ccountry\u003e\" currency and selected language\r\n\r\n    Examples:\r\n      | country |\r\n      | KSA     |\r\n      | BH      |\r\n      | KW      |","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///D:/AutomationFrameworks/Testcrew%20task/src/test/java/tests/StcSubscriptionPackages.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Plan Price Feature","description":"  In order to subscribe to STC TV\n  As a valid customer from KSA KW or BH\n  I want to check the plans currency in my country currency and preferred language","children":[{"scenario":{"location":{"line":7,"column":3},"keyword":"Scenario Outline","name":"check lite price and currency in  english","steps":[{"location":{"line":9,"column":5},"keyword":"Given ","text":"user Navigate to STC Tv Website","id":"92843f65-2267-43b1-a558-222b887b0a81"},{"location":{"line":10,"column":5},"keyword":"When ","text":"user select \"\u003ccountry\u003e\"","id":"2605888f-3a17-48a8-ad5a-8c3709ceef92"},{"location":{"line":11,"column":5},"keyword":"Then ","text":"user Should see lite plan price in \"\u003ccountry\u003e\" currency and selected language","id":"f65df295-be01-482e-b964-3319cb88cd2f"}],"examples":[{"location":{"line":13,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":14,"column":7},"cells":[{"location":{"line":14,"column":9},"value":"country"}],"id":"f5d5a3c2-7bce-49ab-b215-ec709b16c471"},"tableBody":[{"location":{"line":15,"column":7},"cells":[{"location":{"line":15,"column":9},"value":"KSA"}],"id":"8f4de879-244f-4613-9684-21b13ac8b872"},{"location":{"line":16,"column":7},"cells":[{"location":{"line":16,"column":9},"value":"BH"}],"id":"2d73bcdd-a85c-4420-bbf8-17f4d8f2a21c"},{"location":{"line":17,"column":7},"cells":[{"location":{"line":17,"column":9},"value":"KW"}],"id":"bbb6e739-e176-48c1-a231-4f3f2373891a"}],"id":"180d8cf9-34a2-4ff3-bc33-16a555d28bf3"}],"id":"0f236e46-b465-47ec-a133-e70adabef707"}},{"scenario":{"location":{"line":19,"column":3},"keyword":"Scenario Outline","name":"check classic price and currency in  english","steps":[{"location":{"line":21,"column":5},"keyword":"Given ","text":"user Navigate to STC Tv Website","id":"cbebe519-463f-4bee-85c5-92a1e8d3c4af"},{"location":{"line":22,"column":5},"keyword":"When ","text":"user select \"\u003ccountry\u003e\"","id":"f4f008fe-4cd3-4d35-8bda-cf4e2e067a28"},{"location":{"line":23,"column":5},"keyword":"Then ","text":"user Should see classic plan price in \"\u003ccountry\u003e\" currency and selected language","id":"63ade10f-fa19-4ce0-b391-1059dc22898a"}],"examples":[{"location":{"line":26,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":27,"column":7},"cells":[{"location":{"line":27,"column":9},"value":"country"}],"id":"50a90d6b-3379-4931-9e9f-d8198b724a24"},"tableBody":[{"location":{"line":28,"column":7},"cells":[{"location":{"line":28,"column":9},"value":"KSA"}],"id":"cbe9019b-c9c2-4a21-8173-d1331bd91993"},{"location":{"line":29,"column":7},"cells":[{"location":{"line":29,"column":9},"value":"BH"}],"id":"b79c9a20-2058-411b-b1cc-552d35686e38"},{"location":{"line":30,"column":7},"cells":[{"location":{"line":30,"column":9},"value":"KW"}],"id":"e1eeefdb-6d5b-4b77-989a-7400462682bc"}],"id":"0e08aa6f-e3d9-42eb-b765-94f0210db736"}],"id":"bb01970e-d85c-4076-b424-6dd703d050d9"}},{"scenario":{"location":{"line":32,"column":3},"keyword":"Scenario Outline","name":"check permium price and currency in  english","steps":[{"location":{"line":34,"column":5},"keyword":"Given ","text":"user Navigate to STC Tv Website","id":"bdcd2552-3eab-4c6d-b360-03fefdc73e7a"},{"location":{"line":35,"column":5},"keyword":"When ","text":"user select \"\u003ccountry\u003e\"","id":"655c6ccd-3b56-4aa4-a656-eb6fe9ac538a"},{"location":{"line":36,"column":5},"keyword":"Then ","text":"user Should see permium plan price in \"\u003ccountry\u003e\" currency and selected language","id":"7d0232e3-f09d-4213-9a11-b873204761fd"}],"examples":[{"location":{"line":38,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":39,"column":7},"cells":[{"location":{"line":39,"column":9},"value":"country"}],"id":"32d39e53-a8f7-447e-b4ec-1d60816306a8"},"tableBody":[{"location":{"line":40,"column":7},"cells":[{"location":{"line":40,"column":9},"value":"KSA"}],"id":"7821f5ab-b039-4e03-898b-2bfd72db2229"},{"location":{"line":41,"column":7},"cells":[{"location":{"line":41,"column":9},"value":"BH"}],"id":"8f70af4c-4aa9-4777-af46-c18216af940a"},{"location":{"line":42,"column":7},"cells":[{"location":{"line":42,"column":9},"value":"KW"}],"id":"a27d6a44-2ba3-46d5-b22c-9984765d6782"}],"id":"b4ec8ecf-e243-4b0a-9155-22a66c8e5882"}],"id":"e79be44b-d337-4f8f-a95c-ee8ff6023f25"}}]}}},{"pickle":{"id":"afb9b2c8-ce39-40ca-9918-4e7d29ab4b46","uri":"file:///D:/AutomationFrameworks/Testcrew%20task/src/test/java/tests/StcSubscriptionPackages.feature","name":"check lite price and currency in  english","language":"en","steps":[{"text":"user Navigate to STC Tv Website","id":"961586b2-ec61-4d9b-b07a-edda11e229e0","astNodeIds":["92843f65-2267-43b1-a558-222b887b0a81","8f4de879-244f-4613-9684-21b13ac8b872"]},{"text":"user select \"KSA\"","id":"8034133f-42cd-4c4a-90d7-9d0c7d041cd8","astNodeIds":["2605888f-3a17-48a8-ad5a-8c3709ceef92","8f4de879-244f-4613-9684-21b13ac8b872"]},{"text":"user Should see lite plan price in \"KSA\" currency and selected language","id":"ae095d6b-d7f1-45fb-b7fa-254c27eb1c5a","astNodeIds":["f65df295-be01-482e-b964-3319cb88cd2f","8f4de879-244f-4613-9684-21b13ac8b872"]}],"astNodeIds":["0f236e46-b465-47ec-a133-e70adabef707","8f4de879-244f-4613-9684-21b13ac8b872"]}},{"pickle":{"id":"723c2383-d537-4a2c-858a-c5dd7e2d9722","uri":"file:///D:/AutomationFrameworks/Testcrew%20task/src/test/java/tests/StcSubscriptionPackages.feature","name":"check lite price and currency in  english","language":"en","steps":[{"text":"user Navigate to STC Tv Website","id":"7011e0ef-0e89-4ac5-bf1f-155e26a6c092","astNodeIds":["92843f65-2267-43b1-a558-222b887b0a81","2d73bcdd-a85c-4420-bbf8-17f4d8f2a21c"]},{"text":"user select \"BH\"","id":"7fd1bbbb-a14f-4bd8-bdb4-2b6f9e63a8ea","astNodeIds":["2605888f-3a17-48a8-ad5a-8c3709ceef92","2d73bcdd-a85c-4420-bbf8-17f4d8f2a21c"]},{"text":"user Should see lite plan price in \"BH\" currency and selected language","id":"7fe1e8d3-a724-49d5-9930-88aa5a2dfda6","astNodeIds":["f65df295-be01-482e-b964-3319cb88cd2f","2d73bcdd-a85c-4420-bbf8-17f4d8f2a21c"]}],"astNodeIds":["0f236e46-b465-47ec-a133-e70adabef707","2d73bcdd-a85c-4420-bbf8-17f4d8f2a21c"]}},{"pickle":{"id":"bc0bd50a-5064-43d5-9449-fbea3ce9d102","uri":"file:///D:/AutomationFrameworks/Testcrew%20task/src/test/java/tests/StcSubscriptionPackages.feature","name":"check lite price and currency in  english","language":"en","steps":[{"text":"user Navigate to STC Tv Website","id":"f3c5ab50-ec21-4714-9e00-c2180af6fc7b","astNodeIds":["92843f65-2267-43b1-a558-222b887b0a81","bbb6e739-e176-48c1-a231-4f3f2373891a"]},{"text":"user select \"KW\"","id":"b179d7d4-6019-4fc7-b385-6bcd9b29fc62","astNodeIds":["2605888f-3a17-48a8-ad5a-8c3709ceef92","bbb6e739-e176-48c1-a231-4f3f2373891a"]},{"text":"user Should see lite plan price in \"KW\" currency and selected language","id":"df5555de-5043-41ce-b00d-99cf06a0fc42","astNodeIds":["f65df295-be01-482e-b964-3319cb88cd2f","bbb6e739-e176-48c1-a231-4f3f2373891a"]}],"astNodeIds":["0f236e46-b465-47ec-a133-e70adabef707","bbb6e739-e176-48c1-a231-4f3f2373891a"]}},{"pickle":{"id":"47ce8e28-f0bc-4c35-bdbf-ebd163061797","uri":"file:///D:/AutomationFrameworks/Testcrew%20task/src/test/java/tests/StcSubscriptionPackages.feature","name":"check classic price and currency in  english","language":"en","steps":[{"text":"user Navigate to STC Tv Website","id":"34100250-69f8-47a6-a36c-6e41d930947c","astNodeIds":["cbebe519-463f-4bee-85c5-92a1e8d3c4af","cbe9019b-c9c2-4a21-8173-d1331bd91993"]},{"text":"user select \"KSA\"","id":"d32a285b-7e54-408c-be2a-4fed89b2f418","astNodeIds":["f4f008fe-4cd3-4d35-8bda-cf4e2e067a28","cbe9019b-c9c2-4a21-8173-d1331bd91993"]},{"text":"user Should see classic plan price in \"KSA\" currency and selected language","id":"5853b296-ed4d-41eb-8cb1-9fe9ed2ce089","astNodeIds":["63ade10f-fa19-4ce0-b391-1059dc22898a","cbe9019b-c9c2-4a21-8173-d1331bd91993"]}],"astNodeIds":["bb01970e-d85c-4076-b424-6dd703d050d9","cbe9019b-c9c2-4a21-8173-d1331bd91993"]}},{"pickle":{"id":"bf72336f-188f-4d08-8d10-83f26b46c89e","uri":"file:///D:/AutomationFrameworks/Testcrew%20task/src/test/java/tests/StcSubscriptionPackages.feature","name":"check classic price and currency in  english","language":"en","steps":[{"text":"user Navigate to STC Tv Website","id":"b677a500-ff0b-4958-afd8-43163bcc1977","astNodeIds":["cbebe519-463f-4bee-85c5-92a1e8d3c4af","b79c9a20-2058-411b-b1cc-552d35686e38"]},{"text":"user select \"BH\"","id":"c1dd501a-7bb7-483f-81af-c1c5e2b7f2f0","astNodeIds":["f4f008fe-4cd3-4d35-8bda-cf4e2e067a28","b79c9a20-2058-411b-b1cc-552d35686e38"]},{"text":"user Should see classic plan price in \"BH\" currency and selected language","id":"3cec18a4-dc03-488b-bc4c-9ae04f600fd2","astNodeIds":["63ade10f-fa19-4ce0-b391-1059dc22898a","b79c9a20-2058-411b-b1cc-552d35686e38"]}],"astNodeIds":["bb01970e-d85c-4076-b424-6dd703d050d9","b79c9a20-2058-411b-b1cc-552d35686e38"]}},{"pickle":{"id":"254e85d5-d9cc-4c18-9026-648cf70620c1","uri":"file:///D:/AutomationFrameworks/Testcrew%20task/src/test/java/tests/StcSubscriptionPackages.feature","name":"check classic price and currency in  english","language":"en","steps":[{"text":"user Navigate to STC Tv Website","id":"90eded5d-3ca8-449a-9b95-697850a79ae4","astNodeIds":["cbebe519-463f-4bee-85c5-92a1e8d3c4af","e1eeefdb-6d5b-4b77-989a-7400462682bc"]},{"text":"user select \"KW\"","id":"95b11c32-5455-42ac-a81d-dd17cc296455","astNodeIds":["f4f008fe-4cd3-4d35-8bda-cf4e2e067a28","e1eeefdb-6d5b-4b77-989a-7400462682bc"]},{"text":"user Should see classic plan price in \"KW\" currency and selected language","id":"5c602258-a66c-4294-b85d-0f50ff96c8af","astNodeIds":["63ade10f-fa19-4ce0-b391-1059dc22898a","e1eeefdb-6d5b-4b77-989a-7400462682bc"]}],"astNodeIds":["bb01970e-d85c-4076-b424-6dd703d050d9","e1eeefdb-6d5b-4b77-989a-7400462682bc"]}},{"pickle":{"id":"eda46d58-e4ec-4783-8f61-122c94520d37","uri":"file:///D:/AutomationFrameworks/Testcrew%20task/src/test/java/tests/StcSubscriptionPackages.feature","name":"check permium price and currency in  english","language":"en","steps":[{"text":"user Navigate to STC Tv Website","id":"a123166c-bad5-49fd-9893-ef0d73a767ea","astNodeIds":["bdcd2552-3eab-4c6d-b360-03fefdc73e7a","7821f5ab-b039-4e03-898b-2bfd72db2229"]},{"text":"user select \"KSA\"","id":"ab323985-e0d3-46fc-8464-84e663c33891","astNodeIds":["655c6ccd-3b56-4aa4-a656-eb6fe9ac538a","7821f5ab-b039-4e03-898b-2bfd72db2229"]},{"text":"user Should see permium plan price in \"KSA\" currency and selected language","id":"019bf4af-c314-445f-afd6-45f108c17bc2","astNodeIds":["7d0232e3-f09d-4213-9a11-b873204761fd","7821f5ab-b039-4e03-898b-2bfd72db2229"]}],"astNodeIds":["e79be44b-d337-4f8f-a95c-ee8ff6023f25","7821f5ab-b039-4e03-898b-2bfd72db2229"]}},{"pickle":{"id":"92d52271-3852-4658-b66f-e04fabbbd0f2","uri":"file:///D:/AutomationFrameworks/Testcrew%20task/src/test/java/tests/StcSubscriptionPackages.feature","name":"check permium price and currency in  english","language":"en","steps":[{"text":"user Navigate to STC Tv Website","id":"b1169881-cc44-426d-acc6-af5ee6a024d2","astNodeIds":["bdcd2552-3eab-4c6d-b360-03fefdc73e7a","8f70af4c-4aa9-4777-af46-c18216af940a"]},{"text":"user select \"BH\"","id":"7a93af23-6a1c-43ed-9975-02886628e24a","astNodeIds":["655c6ccd-3b56-4aa4-a656-eb6fe9ac538a","8f70af4c-4aa9-4777-af46-c18216af940a"]},{"text":"user Should see permium plan price in \"BH\" currency and selected language","id":"4c736ef2-4fd1-4baa-bbd1-f17adb53932f","astNodeIds":["7d0232e3-f09d-4213-9a11-b873204761fd","8f70af4c-4aa9-4777-af46-c18216af940a"]}],"astNodeIds":["e79be44b-d337-4f8f-a95c-ee8ff6023f25","8f70af4c-4aa9-4777-af46-c18216af940a"]}},{"pickle":{"id":"86641bfe-86a6-4b40-967c-84521685aeec","uri":"file:///D:/AutomationFrameworks/Testcrew%20task/src/test/java/tests/StcSubscriptionPackages.feature","name":"check permium price and currency in  english","language":"en","steps":[{"text":"user Navigate to STC Tv Website","id":"57a9ae70-4f3b-466b-a494-0288ded3faeb","astNodeIds":["bdcd2552-3eab-4c6d-b360-03fefdc73e7a","a27d6a44-2ba3-46d5-b22c-9984765d6782"]},{"text":"user select \"KW\"","id":"f2130fbb-516b-484d-bf26-a1df03d663ff","astNodeIds":["655c6ccd-3b56-4aa4-a656-eb6fe9ac538a","a27d6a44-2ba3-46d5-b22c-9984765d6782"]},{"text":"user Should see permium plan price in \"KW\" currency and selected language","id":"0ac0303a-fa26-4036-9372-66d5b8624dea","astNodeIds":["7d0232e3-f09d-4213-9a11-b873204761fd","a27d6a44-2ba3-46d5-b22c-9984765d6782"]}],"astNodeIds":["e79be44b-d337-4f8f-a95c-ee8ff6023f25","a27d6a44-2ba3-46d5-b22c-9984765d6782"]}},{"testCase":{"id":"825e2d37-4cf5-4528-b220-4af010a06508","pickleId":"afb9b2c8-ce39-40ca-9918-4e7d29ab4b46","testSteps":[{"id":"706a09eb-67c2-4dc6-a420-c2ca990a12af","pickleStepId":"961586b2-ec61-4d9b-b07a-edda11e229e0","stepDefinitionIds":["0b3f21dc-1efd-457f-bc18-8c6f648f65b9"],"stepMatchArgumentsLists":[{}]},{"id":"ae72ea81-1ba5-4c42-956c-404a56e959dc","pickleStepId":"8034133f-42cd-4c4a-90d7-9d0c7d041cd8","stepDefinitionIds":["aa4b7e38-a61b-4040-bab8-4af1aca1d80e"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"string","group":{"start":12,"value":"\"KSA\"","children":[{"start":13,"value":"KSA","children":[{}]},{"children":[{}]}]}}]}]},{"id":"be4f9e4e-2354-491b-9035-a0fd0cbfbebc","pickleStepId":"ae095d6b-d7f1-45fb-b7fa-254c27eb1c5a","stepDefinitionIds":["fec59800-565c-498c-b809-57a1ea9dabb6"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"string","group":{"start":35,"value":"\"KSA\"","children":[{"start":36,"value":"KSA","children":[{}]},{"children":[{}]}]}}]}]}]}},{"testCaseStarted":{"timestamp":{"seconds":"1697320446","nanos":418285700},"testCaseId":"825e2d37-4cf5-4528-b220-4af010a06508","id":"77d5756e-63d3-4b12-b57a-48699f3a1297"}},{"testStepStarted":{"timestamp":{"seconds":"1697320446","nanos":421340700},"testStepId":"706a09eb-67c2-4dc6-a420-c2ca990a12af","testCaseStartedId":"77d5756e-63d3-4b12-b57a-48699f3a1297"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"5","nanos":874108600}},"timestamp":{"seconds":"1697320452","nanos":295449300},"testStepId":"706a09eb-67c2-4dc6-a420-c2ca990a12af","testCaseStartedId":"77d5756e-63d3-4b12-b57a-48699f3a1297"}},{"testStepStarted":{"timestamp":{"seconds":"1697320452","nanos":312726800},"testStepId":"ae72ea81-1ba5-4c42-956c-404a56e959dc","testCaseStartedId":"77d5756e-63d3-4b12-b57a-48699f3a1297"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"2","nanos":997181100}},"timestamp":{"seconds":"1697320455","nanos":309907900},"testStepId":"ae72ea81-1ba5-4c42-956c-404a56e959dc","testCaseStartedId":"77d5756e-63d3-4b12-b57a-48699f3a1297"}},{"testStepStarted":{"timestamp":{"seconds":"1697320455","nanos":311559900},"testStepId":"be4f9e4e-2354-491b-9035-a0fd0cbfbebc","testCaseStartedId":"77d5756e-63d3-4b12-b57a-48699f3a1297"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":124390000}},"timestamp":{"seconds":"1697320455","nanos":435949900},"testStepId":"be4f9e4e-2354-491b-9035-a0fd0cbfbebc","testCaseStartedId":"77d5756e-63d3-4b12-b57a-48699f3a1297"}},{"testCaseFinished":{"timestamp":{"seconds":"1697320455","nanos":436712400},"testCaseStartedId":"77d5756e-63d3-4b12-b57a-48699f3a1297"}},{"testCase":{"id":"02604203-55ae-4631-9bbf-24347a9ab457","pickleId":"723c2383-d537-4a2c-858a-c5dd7e2d9722","testSteps":[{"id":"58280798-2ac0-492a-9145-7ad8a97b8f5a","pickleStepId":"7011e0ef-0e89-4ac5-bf1f-155e26a6c092","stepDefinitionIds":["35871f24-645c-4bfb-8632-fcf15cfb43d2"],"stepMatchArgumentsLists":[{}]},{"id":"5c77e37e-648b-4ab7-92ad-60be10968ec9","pickleSt
