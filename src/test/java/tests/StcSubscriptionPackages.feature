@@ -3,7 +3,7 @@ Feature: Plan Price Feature
   As a valid customer from KSA KW or BH
   I want to check the plans currency in my country currency and preferred language
 
-  @PricePlansEn
+
   Scenario Outline: check price and currency in  english
 
     Given user Navigate to STC Tv Website

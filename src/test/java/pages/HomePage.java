@@ -1,5 +1,6 @@
 package pages;
 
+import driver.WebDriverSingleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,9 +10,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.CountryDataUtility;
 import utilities.JsonReader;
+import utilities.WaitUtils;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
+import static driver.WebDriverSingleton.getDriverSingleton;
 
 public class HomePage extends BasePage {
 
@@ -42,11 +47,11 @@ public class HomePage extends BasePage {
 
         wait.waitForElementToBeVisible(countryClick);
              driver.findElement(countryClick).click();
-        if (country == "ksa") {
+        if (country == "KSA") {
             driver.findElement(ksaButton).click();
-        } else if (country == "kuwait") {
+        } else if (country == "KW") {
             driver.findElement(kuwaitButton).click();
-        } else if (country == "bahrain") {
+        } else if (country == "BH") {
             driver.findElement(bahrainButton).click();
         }
     }
@@ -56,7 +61,6 @@ public class HomePage extends BasePage {
     }
 
     public void loadPage() {
-
         driver.get(url);
     }
 
