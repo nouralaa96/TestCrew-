@@ -39,23 +39,27 @@ public class StcSubscriptionPackageStepdefs {
 
 
 
-    @Then("user Should see lite plan price in country currency and selected language")
-    public void user_should_see_lite_plan_price_in_country_currency_and_selected_language() throws Exception {
-        getCountryData("KSA", countries);
-        homePage.elementValueAssertion(HomePage.litePrice,countryDataUtility.getPriceForType("KSA","LITE",countries).toString());
-        homePage.elementValueAssertion(HomePage.liteCurrency,countryDataUtility.getCurrency(countryData));
+    @Then("user Should see lite plan price in {string} currency and selected language")
+    public void user_should_see_lite_plan_price_in_country_currency_and_selected_language(String country) throws Exception {
+        getCountryData(country, countries);
+        homePage.elementValueAssertion(HomePage.litePrice, CountryDataUtility.getPriceForType(country,"LITE",countries).toString());
+        homePage.elementValueAssertion(HomePage.classicCurrency, CountryDataUtility.getCurrency(country,countries).toString());
     }
 
-    @Then("user Should see classic plan price in country currency and selected language")
-    public void user_should_see_classic_plan_price_in_country_currency_and_selected_language() throws Exception {
-        homePage.elementValueAssertion(HomePage.classicPrice,"2.5");
-        homePage.elementValueAssertion(HomePage.liteCurrency,"KWD/month");
+    @Then("user Should see classic plan price in {string} currency and selected language")
+    public void user_should_see_classic_plan_price_in_country_currency_and_selected_language(String country) throws Exception {
+        getCountryData(country, countries);
+        homePage.elementValueAssertion(HomePage.classicPrice, CountryDataUtility.getPriceForType(country,"CLASSIC",countries).toString());
+        homePage.elementValueAssertion(HomePage.classicCurrency, CountryDataUtility.getCurrency(country,countries).toString());
+
     }
 
-    @Then("user Should see permium plan price in country currency and selected language")
-    public void user_should_see_permium_plan_price_in_country_currency_and_selected_language() throws Exception {
-        homePage.elementValueAssertion(HomePage.premiumPrice,"4.8");
-        homePage.elementValueAssertion(HomePage.liteCurrency,"KWD/month");
+    @Then("user Should see permium plan price in {string} currency and selected language")
+    public void user_should_see_permium_plan_price_in_country_currency_and_selected_language(String country) throws Exception {
+        getCountryData(country, countries);
+        homePage.elementValueAssertion(HomePage.premiumPrice, CountryDataUtility.getPriceForType(country,"PREMIUM",countries).toString());
+        homePage.elementValueAssertion(HomePage.classicCurrency, CountryDataUtility.getCurrency(country,countries).toString());
+
     }
 
 

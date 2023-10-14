@@ -36,10 +36,13 @@ public class CountryDataUtility {
     /**
      * Gets the currency for a specific country's data.
      *
-     * @param countryData The data for a specific country.
      * @return The currency as a string.
      */
-    public static String getCurrency(Map<String, Object> countryData) {
+    public static String getCurrency(String countryName, List<Map<String, Object>> countries) {
+        Map<String, Object> countryData = getCountryData(countryName, countries);
+        if (countryData == null) {
+            return null;
+        }
         return (String) countryData.get(KEY_CURRENCY);
     }
 
@@ -51,7 +54,7 @@ public class CountryDataUtility {
      * @param countries   The list of countries and their data.
      * @return The price as a double, or null if not found.
      */
-    public static Double getPriceForType(String countryName, String type, List<Map<String, Object>> countries) {
+    public static String getPriceForType(String countryName, String type, List<Map<String, Object>> countries) {
         Map<String, Object> countryData = getCountryData(countryName, countries);
         if (countryData == null) {
             return null;
@@ -59,7 +62,7 @@ public class CountryDataUtility {
         List<Map<String, Object>> prices = (List<Map<String, Object>>) countryData.get(KEY_PRICES);
         for (Map<String, Object> price : prices) {
             if (price.get(KEY_TYPE).equals(type)) {
-                return (Double) price.get(KEY_PRICE);
+                return price.get(KEY_PRICE).toString();
             }
         }
         return null;
@@ -75,35 +78,5 @@ public class CountryDataUtility {
     public static String getType(Map<String, Object> price) {
 
         return (String) price.get(KEY_TYPE);
-    }
-
-
-    public static void main(String[] args) throws Exception {
-        List<Map<String, Object>> countries = JsonReader.readJsonData(
-                System.getProperty("user.dir") + "/src/main/resources/testData.json", "countries");
-
-
-        Map<String, Object> countryData = getCountryData("BR", countries);
-
-        String currency = getCurrency(countryData);
-
-        double price = getPriceForType("BR", "LITE", countries);
-
-
-        String type = CountryDataUtility.getType(pricesList("BR", countries).get(0));
-
-
-        System.out.println("11" + countries);
-
-        System.out.println("22" + countryData);
-
-
-        System.out.println("33" + currency);
-
-        System.out.println("44" + type);
-
-        System.out.println("55" + price);
-
-
     }
 }

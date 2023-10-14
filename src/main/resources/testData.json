@@ -6,33 +6,33 @@
       "prices": [
         {
           "type": "LITE",
-          "price": 15.0
+          "price": 15
         },
         {
           "type": "CLASSIC",
-          "price": 25.0
+          "price": 25
         },
         {
           "type": "PREMIUM",
-          "price": 60.0
+          "price": 60
         }
       ]
     },
     {
-      "name": "BR",
+      "name": "BH",
       "currency": "BHD/month",
       "prices": [
         {
           "type": "LITE",
-          "price":2.0
+          "price":2
         },
         {
           "type": "CLASSIC",
-          "price":3.0
+          "price":3
         },
         {
           "type": "PREMIUM",
-          "price":6.0
+          "price":6
         }
       ]
     },

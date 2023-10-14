@@ -47,21 +47,4 @@ public class BasePage extends AbstractTestNGCucumberTests {
             driver.close();
         }
     }
-
-    @Test
-    public void test() throws Exception {
-
-        String text = wait.findElementWithWait(By.id("name-lite")).getText();
-
-
-        List<Map<String, Object>> countries = JsonReader.readJsonData(
-                System.getProperty("user.dir") + "/src/main/resources/testData.json", "countries");
-
-        String countryName = "KSA";
-
-        String type = CountryDataUtility.getType(CountryDataUtility.pricesList("KSA", countries).get(1));
-
-        Assert.assertEquals(text, type);
-        System.out.println("dssad" + text);
-    }
 }

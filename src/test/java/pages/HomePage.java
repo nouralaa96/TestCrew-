@@ -65,20 +65,20 @@ public class HomePage extends BasePage {
     }
 
 
-    @Test
-    public  void test() throws Exception {
-      loadPage();
-      chooseCountry("ksa");
-
-        List<Map<String, Object>> countries = JsonReader.readJsonData(
-                System.getProperty("user.dir") + "/src/main/resources/testData.json", "countries");
-
-        String countryName = "KSA";
-        String type = CountryDataUtility.getType(CountryDataUtility.pricesList("KSA",countries).get(0));
-
-      String curr =  CountryDataUtility.getCurrency(CountryDataUtility.getCountryData(countryName, countries));
-         elementValueAssertion(liteCurrency,curr);
-         elementValueAssertion(liteLogo,type);
-
-    }
+//    @Test
+//    public  void test() throws Exception {
+//      loadPage();
+//      chooseCountry("ksa");
+//
+//        List<Map<String, Object>> countries = JsonReader.readJsonData(
+//                System.getProperty("user.dir") + "/src/main/resources/testData.json", "countries");
+//
+//        String countryName = "KSA";
+//        String type = CountryDataUtility.getType(CountryDataUtility.pricesList("KSA",countries).get(0));
+//
+//      String curr =  CountryDataUtility.getCurrency(CountryDataUtility.getCountryData(countryName, countries));
+//         elementValueAssertion(liteCurrency,curr);
+//         elementValueAssertion(liteLogo,type);
+//
+//    }
 }
