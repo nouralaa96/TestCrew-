@@ -26,7 +26,6 @@ public class BasePage {
     public void setup() throws IOException {
         driverSingleton = WebDriverSingleton.getDriverSingleton();
         driverSingleton.maximizeWindow();
-        driverSingleton.navigateTo(" https://subscribe.stctv.com/sa-en");
         driver = driverSingleton.getWebDriver();
         wait = new WaitUtils(driver);
     }

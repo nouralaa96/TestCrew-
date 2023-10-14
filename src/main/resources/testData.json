@@ -2,7 +2,7 @@
   "countries": [
     {
       "name": "KSA",
-      "currency": "SAR",
+      "currency": "SAR/month",
       "prices": [
         {
           "type": "LITE",
@@ -20,7 +20,7 @@
     },
     {
       "name": "BR",
-      "currency": "BHD",
+      "currency": "BHD/month",
       "prices": [
         {
           "type": "LITE",
@@ -38,7 +38,7 @@
     },
     {
       "name": "KW",
-      "currency": "KWD",
+      "currency": "KWD/month",
       "prices": [
         {
           "type": "LITE",
