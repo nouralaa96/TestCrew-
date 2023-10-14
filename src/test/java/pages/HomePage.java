@@ -47,11 +47,11 @@ public class HomePage extends BasePage {
 
         wait.waitForElementToBeVisible(countryClick);
              driver.findElement(countryClick).click();
-        if (country == "KSA") {
+        if (country.equalsIgnoreCase("KSA") ) {
             driver.findElement(ksaButton).click();
-        } else if (country == "KW") {
+        } else if (country.equalsIgnoreCase("KW")){
             driver.findElement(kuwaitButton).click();
-        } else if (country == "BH") {
+        } else if (country.equalsIgnoreCase("BH")) {
             driver.findElement(bahrainButton).click();
         }
     }

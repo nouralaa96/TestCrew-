@@ -31,13 +31,13 @@ public class BasePage extends AbstractTestNGCucumberTests {
     }
 
     WebDriver driver = driverSingleton.getWebDriver();
-    WaitUtils wait;
+    WaitUtils wait  = new WaitUtils(driver);;
 
 
     @BeforeSuite
     public void setup() throws IOException {
         driverSingleton.maximizeWindow();
-        wait = new WaitUtils(driver);
+
     }
 
     @AfterClass

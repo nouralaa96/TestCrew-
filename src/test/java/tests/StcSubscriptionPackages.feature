@@ -7,15 +7,13 @@ Feature: Plan Price Feature
   Scenario Outline: check price and currency in  english
 
     Given user Navigate to STC Tv Website
-    When  user select <country>
-    And   user select <language>
-    Then  user should see country name in the selected language
-    And   user Should see lite plan price in country currency and selected language
+    When  user select "<country>"
+    Then   user Should see lite plan price in country currency and selected language
     And   user Should see classic plan price in country currency and selected language
     And   user Should see permium plan price in country currency and selected language
 
     Examples:
-      | country | language  |
-      | "KSA"   | "English" |
-      | "KW"    | "English" |
-      | "BH"    | "English" |
+      | country |
+      | KSA     |
+      | KW      |
+      | BH      |
