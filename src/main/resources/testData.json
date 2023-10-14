@@ -1,0 +1,58 @@
+{
+  "countries": [
+    {
+      "name": "KSA",
+      "currency": "SAR",
+      "prices": [
+        {
+          "type": "LITE",
+          "price": 15.0
+        },
+        {
+          "type": "CLASSIC",
+          "price": 25.0
+        },
+        {
+          "type": "PREMIUM",
+          "price": 60.0
+        }
+      ]
+    },
+    {
+      "name": "BR",
+      "currency": "BHD",
+      "prices": [
+        {
+          "type": "LITE",
+          "price":2.0
+        },
+        {
+          "type": "CLASSIC",
+          "price":3.0
+        },
+        {
+          "type": "PREMIUM",
+          "price":6.0
+        }
+      ]
+    },
+    {
+      "name": "KW",
+      "currency": "KWD",
+      "prices": [
+        {
+          "type": "LITE",
+          "price": 1.2
+        },
+        {
+          "type": "CLASSIC",
+          "price": 2.5
+        },
+        {
+          "type": "PREMIUM",
+          "price": 4.8
+        }
+      ]
+    }
+  ]
+}
