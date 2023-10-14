@@ -1,14 +1,26 @@
 package tests;
 
+import driver.WebDriverSingleton;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import pages.BasePage;
+import pages.HomePage;
+
+import java.io.IOException;
+
+import static driver.WebDriverSingleton.getDriverSingleton;
 
 public class StcSubscriptionPackageStepdefs {
 
+
+
+
     @Given("user Navigate to STC Tv Website")
-    public void user_navigate_to_stc_tv_website() {
-    
+    public void user_navigate_to_stc_tv_website() throws IOException {
+        HomePage homePage = new HomePage() ;
+         homePage.loadPage();
     }
 
     @When("user select {string}")

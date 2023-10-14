@@ -1,11 +1,13 @@
 package pages;
 
 import driver.WebDriverSingleton;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utilities.CountryDataUtility;
@@ -16,17 +18,25 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-public class BasePage {
+public class BasePage extends AbstractTestNGCucumberTests {
 
     WebDriverSingleton driverSingleton;
-    WebDriver driver ;
+
+    {
+        try {
+            driverSingleton = WebDriverSingleton.getDriverSingleton();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    WebDriver driver = driverSingleton.getWebDriver();
     WaitUtils wait;
 
-    @BeforeTest
+
+    @BeforeSuite
     public void setup() throws IOException {
-        driverSingleton = WebDriverSingleton.getDriverSingleton();
         driverSingleton.maximizeWindow();
-        driver = driverSingleton.getWebDriver();
         wait = new WaitUtils(driver);
     }
 
@@ -49,9 +59,9 @@ public class BasePage {
 
         String countryName = "KSA";
 
-        String type = CountryDataUtility.getType(CountryDataUtility.pricesList("KSA",countries).get(1));
+        String type = CountryDataUtility.getType(CountryDataUtility.pricesList("KSA", countries).get(1));
 
-        Assert.assertEquals(text,type);
+        Assert.assertEquals(text, type);
         System.out.println("dssad" + text);
     }
 }
